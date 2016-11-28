@@ -1,13 +1,8 @@
-Intro
-=========
+Webshell 
 
-web-shell: web-based shell. see http://ichuan.net/post/49/webshell-in-120-lines-of-code/ for more details.
-
-
-Usage
-======
-
+-->
     npm install
+    npm install express
     node app.js
 
 Then open http://localhost:8080/ to see it.
