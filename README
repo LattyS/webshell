@@ -2,7 +2,6 @@ Webshell
 
 -->
     npm install
-    npm install express
     node app.js
 
-Then open http://localhost:8080/ to see it.
+localhost:8080/
