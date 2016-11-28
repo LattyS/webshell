@@ -1,0 +1,37 @@
+html, body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background: #000000;
+}
+
+#content {
+    font-family:Courier;
+    overflow-y: scroll;
+    font-size: 18px;
+    background: #000000;
+    color: #76ff03;
+    padding: 5%;
+    height: 45%;
+    width: 100%;
+}
+
+input[type="text"] {
+    font-family:Courier;
+    font-size: 18px;
+    color: #76ff03;
+    background: #000000;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    outline: 0;
+    width: 50%;
+    height: 20%;
+}
+
+::selection {
+    background: blue;
+    color: white;
+}

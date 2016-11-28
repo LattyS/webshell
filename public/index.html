@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Invite de commande</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+  </head>
+  <body>
+    <pre id="content"></pre>
+    <input type="text" id="cmd" autofocus>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var content = document.getElementById('content');
+      var cmd = document.getElementById('cmd');
+      var socket = io.connect(location.host);
+
+      var output = function (data) {
+          content.innerHTML += data;
+          content.scrollTop = 9e5;
+      };
+
+      socket.on('output', output);
+
+      socket.on('connect', function () {
+        output('\n');
+      });
+
+      socket.on('disconnect', function () {
+        output('\nBYEBYE\n');
+      });
+
+      cmd.addEventListener('keypress', function (e) {
+        if (e.keyCode === 13) {
+          var data = cmd.value + '\n';
+          socket.emit('input', data);
+            cmd.value = '';
+        }
+      });
+
+    </script>
+  </body>
+</html>
